@@ -11,7 +11,7 @@ import Dashboard from './components/Dashboard'
 
 import configureStore from './store/store';
 
-const store = configureStore(JSON.stringify({}));
+const store = configureStore(JSON.parse(localStorage['fit.root'] || '{}'));
 
 render( 
 		<Provider store={store}>
