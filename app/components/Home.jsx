@@ -6,7 +6,7 @@ import { connect } from 'react-redux'
 import Footer from './index/Footer.jsx'
 import Header from './index/Header.jsx'
 import Motivator from './index/Motivator.jsx'
-import AuthForm from './index/AuthForm.jsx'
+import ButtonBlock from './index/ButtonBlock.jsx'
 
 class Home extends React.Component {
 	render () {
@@ -21,7 +21,7 @@ class Home extends React.Component {
 								<Motivator />
 							</div>
 							<div className="col col-xs-12">
-								<AuthForm />
+								<ButtonBlock />
 							</div>
 						</div>
 						<hr />

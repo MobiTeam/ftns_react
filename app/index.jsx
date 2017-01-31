@@ -8,6 +8,9 @@ import { Provider } from 'react-redux'
 import App from './containers/App'
 import Home from './components/Home'
 import Dashboard from './components/Dashboard'
+import NotFound from './components/NotFound'
+
+import { all } from './constants/acl.js'
 
 import configureStore from './store/store';
 
@@ -18,8 +21,9 @@ render(
 			<Router history={browserHistory}>
 				<Route path="/" component={App}>
 					<IndexRoute component={Home} />
-					<Route path='dashboard' component={Dashboard} />
+					<Route path='dashboard' authorize={all} component={Dashboard} />
 				</Route>
+				<Route path='*' component={NotFound} />
 			</Router>
 		</Provider>,
 		document.getElementById('root')
