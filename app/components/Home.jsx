@@ -2,13 +2,14 @@ import React from 'react'
 import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 import { connect } from 'react-redux'
+import AuthorizedComponent from './AuthorizedComponent';
 
 import Footer from './index/Footer.jsx'
 import Header from './index/Header.jsx'
 import Motivator from './index/Motivator.jsx'
 import ButtonBlock from './index/ButtonBlock.jsx'
 
-class Home extends React.Component {
+class Home extends AuthorizedComponent {
 	render () {
 		return (
 				<DocumentTitle title='Ugra-Fit: главная страница'>

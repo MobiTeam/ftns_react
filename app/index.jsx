@@ -20,7 +20,7 @@ render(
 		<Provider store={store}>
 			<Router history={browserHistory}>
 				<Route path="/" component={App}>
-					<IndexRoute component={Home} />
+					<IndexRoute authorize={all} component={Home} />
 					<Route path='dashboard' authorize={all} component={Dashboard} />
 				</Route>
 				<Route path='*' component={NotFound} />

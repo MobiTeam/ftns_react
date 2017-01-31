@@ -8,7 +8,7 @@ var concat = require('gulp-concat');
 
 gulp.task('build', function () {
     return browserify({entries: './app/index.jsx', extensions: ['.jsx'], debug: true})
-        .transform('babelify', {presets: ['es2017', 'es2016', 'es2015', 'react']})
+        .transform('babelify', {presets: ['es2017', 'es2016', 'es2015', 'stage-0', 'stage-1', 'stage-2', 'react']})
         .bundle()
         .pipe(source('app.js'))
         // .pipe(buffer())
