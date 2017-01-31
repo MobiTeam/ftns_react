@@ -10,18 +10,22 @@ import Home from './components/Home'
 import Dashboard from './components/Dashboard'
 import NotFound from './components/NotFound'
 
+// acl
 import { all } from './constants/acl.js'
+import canSee from './hocs/enableAuth'
 
-import configureStore from './store/store';
+// store
+import configureStore from './store/store'
+import defaultState from './store/defaultState'
 
-const store = configureStore(JSON.parse(localStorage['fit.root'] || '{}'));
+const store = configureStore(JSON.parse(localStorage['fit.root'] || JSON.stringify(defaultState)));
 
 render( 
 		<Provider store={store}>
 			<Router history={browserHistory}>
 				<Route path="/" component={App}>
-					<IndexRoute authorize={all} component={Home} />
-					<Route path='dashboard' authorize={all} component={Dashboard} />
+					<IndexRoute component={canSee(Home, all)} />
+					<Route path='dashboard' component={canSee(Dashboard, all)} />
 				</Route>
 				<Route path='*' component={NotFound} />
 			</Router>
