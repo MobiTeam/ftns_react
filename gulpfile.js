@@ -17,17 +17,17 @@ gulp.task('build', function () {
 });
 
 gulp.task('buildCSS', function() {
-	gulp.src('./app/*.css')	
+	gulp.src('./app/**/*.css')	
 		.pipe(concat('app.css'))
 		.pipe(gulp.dest('prod/css/'));
 })
 
 gulp.task('watch', ['build'], function () {
-    gulp.watch('./app/*.jsx', ['build']);
+    gulp.watch('./app/**/*.jsx', ['build']);
 });
 
 gulp.task('watchCSS', ['buildCSS'], function () {
-	gulp.watch('./app/*.css', ['buildCSS']);
+	gulp.watch('./app/**/*.css', ['buildCSS']);
 })
 
 gulp.task('default', ['watch', 'watchCSS']);

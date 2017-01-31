@@ -1,4 +1,32 @@
 * {
-	padding: 0px;
 	margin: 0px;
+	padding: 0px;
+}
+
+html, body {
+	background: #f6f5fa;
+	height: 100%;
+}
+
+@font-face {
+	font-family: 'Maxwell-Regular';
+	src:url('../fonts/MAXWELL-REGULAR.ttf');
+}
+
+.btn-label { 
+	position: relative;
+	left: -12px;
+	display: inline-block;
+	padding: 6px 12px;
+	background: rgba(0,0,0,0.15);
+}
+
+.btn-labeled {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+
+.btn { 
+	margin-bottom: 10px; 
+	border-radius: 0px;
 }
