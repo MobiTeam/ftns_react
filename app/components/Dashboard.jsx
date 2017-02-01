@@ -1,5 +1,6 @@
 import React from 'react'
 import DocumentTitle from 'react-document-title'
+import { Link } from 'react-router'
 
 class Dashboard extends React.Component {
 	render () {
@@ -7,7 +8,9 @@ class Dashboard extends React.Component {
 				<DocumentTitle title='Ugra-Fit: личный кабинет'>
 					<div>
 						Личный кабинет
-					</div>
+						<Link to='/dashboard/profile'>Профиль пользователя</Link>
+						{this.props.children}
+					</div>					
 				</DocumentTitle>
 			)		
 	} 

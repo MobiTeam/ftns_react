@@ -11,6 +11,7 @@ import Dashboard from './components/Dashboard'
 import NotFound from './components/NotFound'
 import Login from './components/Login'
 import Registration from './components/Registration'
+import Profile from './components/dashboard/profile/Profile'
 
 // acl
 import { all, admin, user, guest } from './constants/acl.js'
@@ -22,12 +23,16 @@ import defaultState from './store/defaultState'
 
 const store = configureStore(JSON.parse(localStorage['fit.root'] || JSON.stringify(defaultState)));
 
+console.log(store.getState());
+
 render( 
 		<Provider store={store}>
 			<Router history={browserHistory}>
 				<Route path="/" component={App}>
 					<IndexRoute component={canSee(Home, all)} />
-					<Route path='dashboard' component={canSee(Dashboard, [admin, user])} />
+					<Route path='dashboard' component={canSee(Dashboard, [admin, user])}>
+						<Route path='/dashboard/profile' component={Profile} />					
+					</Route>
 					<Route path='registration' component={canSee(Registration, all)} />
 					<Route path='login' component={canSee(Login, all)} />
 				</Route>
