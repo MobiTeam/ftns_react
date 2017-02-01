@@ -9,9 +9,11 @@ import App from './containers/App'
 import Home from './components/Home'
 import Dashboard from './components/Dashboard'
 import NotFound from './components/NotFound'
+import Login from './components/Login'
+import Registration from './components/Registration'
 
 // acl
-import { all } from './constants/acl.js'
+import { all, admin, user, guest } from './constants/acl.js'
 import canSee from './hocs/enableAuth'
 
 // store
@@ -25,7 +27,9 @@ render(
 			<Router history={browserHistory}>
 				<Route path="/" component={App}>
 					<IndexRoute component={canSee(Home, all)} />
-					<Route path='dashboard' component={canSee(Dashboard, all)} />
+					<Route path='dashboard' component={canSee(Dashboard, [admin, user])} />
+					<Route path='registration' component={canSee(Registration, all)} />
+					<Route path='login' component={canSee(Login, all)} />
 				</Route>
 				<Route path='*' component={NotFound} />
 			</Router>
