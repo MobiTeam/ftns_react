@@ -3,15 +3,11 @@ import { connect } from 'react-redux';
 
 const enableAuth = (Component, roles) => {
   class AuthenticatedComponent extends React.Component {
-    static propTypes = {
-      user: PropTypes.object.isRequired
-    }
-
-    componentWillMount () {
+    componentDidMount () {
       this._checkAndRedirect();
     }
 
-    componentWillUpdate () {
+    componentDidUpdate () {
       this._checkAndRedirect();
     }
 
@@ -27,11 +23,11 @@ const enableAuth = (Component, roles) => {
     }
 
     render () {
-      return (
+      return this.props.user ? (
           <div className="authenticated">
             <Component {...this.props} />
           </div>
-        )
+        ) : null;
     }
   }
 

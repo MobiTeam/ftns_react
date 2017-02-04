@@ -1,13 +1,12 @@
 const user = (state = null, action) => {
 	switch (action.type) {
 	case 'LOGIN':
-		state = action.payload;
-		break;
+		return action.payload;
 	case 'LOGOUT':
-		state = null;
-		break;
+		return { 'role' : 'guest' };
+	default:
+		return state;	
 	}
-	return state;
 };
 
 export default user;

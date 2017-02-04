@@ -1,6 +1,6 @@
 const defaultState = {
 	'user' : {
-		'role': 'guest'
+		'role': 'admin'
 	}
 }
 

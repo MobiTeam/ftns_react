@@ -33,8 +33,8 @@ render(
 					<Route path='dashboard' component={canSee(Dashboard, [admin, user])}>
 						<Route path='/dashboard/profile' component={Profile} />					
 					</Route>
-					<Route path='registration' component={canSee(Registration, all)} />
-					<Route path='login' component={canSee(Login, all)} />
+					<Route path='registration' component={Registration} />
+					<Route path='login' component={Login} />
 				</Route>
 				<Route path='*' component={NotFound} />
 			</Router>
