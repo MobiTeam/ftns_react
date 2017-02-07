@@ -3,10 +3,8 @@ import { Link } from 'react-router'
 import DocumentTitle from 'react-document-title'
 import { connect } from 'react-redux'
 
-import Footer from './index/Footer.jsx'
-import Header from './index/Header.jsx'
-import Motivator from './index/Motivator.jsx'
-import ButtonBlock from './index/ButtonBlock.jsx'
+import Motivator from '../index/Motivator'
+import ButtonBlock from '../index/ButtonBlock'
 
 class Home extends React.Component {
 	render () {
@@ -14,18 +12,13 @@ class Home extends React.Component {
 				<DocumentTitle title='Ugra-Fit: главная страница'>
 					<div className='container home-wrapper'>
 						<div className="row">
-							<Header />
-						</div>
-						<div className="row">
 							<div className="col col-xs-12">
 								<Motivator />
 							</div>
 							<div className="col col-xs-12">
 								<ButtonBlock />
 							</div>
-						</div>
-						<hr />
-						<Footer />
+						</div>					
 					</div>
 				</DocumentTitle>
 			)
