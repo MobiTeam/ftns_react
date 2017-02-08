@@ -13,6 +13,7 @@ import RegistrationForm from './components/panel/RegistrationForm'
 import LoginForm from './components/panel/LoginForm'
 
 import Dashboard from './components/Dashboard'
+import DashboardIndex from './components/dashboard/Index'
 import Profile from './components/dashboard/profile/Profile'
 import NotFound from './components/NotFound'
 
@@ -39,7 +40,8 @@ render(
 						<Route path='login' component={LoginForm} />
 						<Route path='registration' component={RegistrationForm} />
 					</Route>
-					<Route path='dashboard' component={canSee(Dashboard, [admin, user])}>
+					<Route component={canSee(Dashboard, [admin, user])}>
+						<Route path='/dashboard' component={DashboardIndex} />
 						<Route path='/dashboard/profile' component={Profile} />					
 					</Route>					
 				</Route>

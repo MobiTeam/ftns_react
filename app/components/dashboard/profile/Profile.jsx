@@ -5,7 +5,7 @@ class Profile extends React.Component {
 	render () {
 		return (
 				<DocumentTitle title='Ugra-Fit: профиль пользователя'>
-					<div className="container">
+					<div>
 						Страница профиля пользователя
 					</div>
 				</DocumentTitle>

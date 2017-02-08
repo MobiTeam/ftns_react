@@ -244,3 +244,7 @@ html, body {
 		-moz-transform:scale(.3);
 	}
 }
+
+#root [data-reactroot], #root [data-reactroot] > .authenticated {
+	height: 100% !important; 
+}

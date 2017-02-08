@@ -2,6 +2,7 @@ import React from 'react'
 import DocumentTitle from 'react-document-title'
 import { connect } from 'react-redux'
 import { Link } from 'react-router'
+import { logIn } from '../../actions/userActions'
  
 class LoginForm extends React.Component {
 	state = {
@@ -16,10 +17,10 @@ class LoginForm extends React.Component {
 			login,
 			pass
 		});
-		// this.props.logIn({
-		// 	'role' : 'admin'
-		// });
-		// this.redirectTo('/dashboard');
+		this.props.logIn({
+			'role' : login
+		});
+		this.redirectTo('/dashboard');
 	}
 	redirectTo (link) {
       	const { router } = this.props;
